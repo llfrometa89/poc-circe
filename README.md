@@ -1,5 +1,5 @@
 # poc-circe
-**poc-circe** is a basic example(Proof of Concept) to test many features of Scala circe library.
+**poc-circe** is a proof of concept to test many features of Scala circe library.
 
 
 ### Requirements

@@ -1,3 +1,6 @@
 package io.github.llfrometa89
 
-class Main {}
+object Main extends App {
+  ParsingJson.run()
+  TraversingAndModifyingJson.run()
+}

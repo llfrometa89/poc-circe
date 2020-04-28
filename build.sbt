@@ -20,6 +20,7 @@ lazy val commonScalacOptions = Seq(
 )
 
 libraryDependencies ++= Libraries.circeDeps ++ Seq(
+  Libraries.mockitoScala,
   Libraries.scalaTest
 )
 

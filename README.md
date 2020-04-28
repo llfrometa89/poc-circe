@@ -1,4 +1,4 @@
-# poc-spring-boot
+# poc-circe
 **poc-circe** is a basic example(Proof of Concept) to test many features of Scala circe library.
 
 
@@ -12,4 +12,4 @@ $ sbt run
 ```
 
 ### Resources
-- https://circe.github.io/circe/
+- [https://circe.github.io/circe/](https://circe.github.io/circe/)

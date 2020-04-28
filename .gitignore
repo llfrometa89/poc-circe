@@ -1,2 +1,4 @@
-*.class
-*.log
+projet/target
+target
+.idea
+.DS_Store

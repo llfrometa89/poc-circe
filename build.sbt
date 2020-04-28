@@ -15,7 +15,8 @@ lazy val commonScalacOptions = Seq(
   "-unchecked",
   "-Wunused:imports,patvars,locals",
   "-Wnumeric-widen",
-  "-Xlint:-unused"
+  "-Xlint:-unused",
+  "-Ymacro-annotations"
 )
 
 libraryDependencies ++= Libraries.circeDeps ++ Seq(

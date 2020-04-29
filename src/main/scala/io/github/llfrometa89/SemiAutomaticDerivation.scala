@@ -2,7 +2,8 @@ package io.github.llfrometa89
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.parser.decode
-import io.circe.syntax._
+import io.circe.generic.JsonCodec, io.circe.syntax._
+import io.circe.{Decoder, Encoder}
 
 object SemiAutomaticDerivation {
 
@@ -30,6 +31,19 @@ object SemiAutomaticDerivation {
       """
     val decodeJsonWithParserDependency = decode[Foo](rawJson)
     println(s"decodeJsonWithParserDependency: $decodeJsonWithParserDependency")
+
+    @JsonCodec case class Bar(i: Int, s: String)
+    val encodeJsonBar = Bar(13, "Qux").asJson
+    println(s"encodeJsonBar: $encodeJsonBar")
+
+    case class User(id: Long, firstName: String, lastName: String)
+    implicit val decodeUser: Decoder[User] =
+      Decoder.forProduct3("id", "first_name", "last_name")(User.apply)
+    println(s"decodeUser: $decodeUser")
+
+    implicit val encodeUser: Encoder[User] =
+      Encoder.forProduct3("id", "first_name", "last_name")(u => (u.id, u.firstName, u.lastName))
+    println(s"encodeUser: $encodeUser")
 
     println(s"<<<<<<<<<<<<<<<<<<<<<<<< >>>>>>>>>>>>>>>>>>>>>>")
   }

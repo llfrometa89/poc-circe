@@ -32,10 +32,12 @@ object SemiAutomaticDerivation {
     val decodeJsonWithParserDependency = decode[Foo](rawJson)
     println(s"decodeJsonWithParserDependency: $decodeJsonWithParserDependency")
 
+    //@JsonCodec
     @JsonCodec case class Bar(i: Int, s: String)
     val encodeJsonBar = Bar(13, "Qux").asJson
     println(s"encodeJsonBar: $encodeJsonBar")
 
+    //forProductN helper methods
     case class User(id: Long, firstName: String, lastName: String)
     implicit val decodeUser: Decoder[User] =
       Decoder.forProduct3("id", "first_name", "last_name")(User.apply)

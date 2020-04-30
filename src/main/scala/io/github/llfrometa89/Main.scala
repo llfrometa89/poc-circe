@@ -5,4 +5,6 @@ object Main extends App {
   TraversingAndModifyingJson.run()
   EncodingAndDecoding.run()
   SemiAutomaticDerivation.run()
+  AutomaticDerivation.run()
+  CustomEncodersAndDecoders.run()
 }

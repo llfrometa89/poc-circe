@@ -16,6 +16,6 @@ object Dependencies {
     val mockitoScala = "org.mockito"   %% "mockito-scala" % Versions.mockitoScala % Test
 
     val circeDeps =
-      Seq(circe("circe-core"), circe("circe-generic"), circe("circe-parser"))
+      Seq(circe("circe-core"), circe("circe-generic"), circe("circe-parser"), circe("circe-shapes"))
   }
 }

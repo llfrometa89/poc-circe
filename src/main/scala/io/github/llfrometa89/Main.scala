@@ -7,4 +7,6 @@ object Main extends App {
   SemiAutomaticDerivation.run()
   AutomaticDerivation.run()
   CustomEncodersAndDecoders.run()
+  ADTsEncodingAndDecoding.run()
+  ADTsEncodingAndDecodingShapeless.run()
 }

@@ -3,6 +3,7 @@ package io.github.llfrometa89
 import io.circe.parser.decode
 import io.circe.syntax._
 import io.circe.{Decoder, Encoder}
+import io.circe.generic.auto._, io.circe.shapes._
 
 object ADTsEncodingAndDecodingShapeless {
   def run(): Unit = {
@@ -10,7 +11,7 @@ object ADTsEncodingAndDecodingShapeless {
     println(s"<<<<<<<<<<<<<<<<<<<<<<<< ADTsEncodingAndDecodingShapeless >>>>>>>>>>>>>>>>>>>>>>")
 
     //ADTs encoding and decoding
-    import GenericDerivation.{decodeEvent => _, encodeEvent => _, _}
+    import ShapesDerivation._
 
     val decodeJsonEvent = decode[Event]("""{ "i": 1000 }""")
     println(s"decodeJsonEvent: $decodeJsonEvent")
@@ -24,6 +25,13 @@ object ADTsEncodingAndDecodingShapeless {
 
 object ShapesDerivation {
   import shapeless.{Coproduct, Generic}
+
+  sealed trait Event
+
+  case class Foo(i: Int)               extends Event
+  case class Bar(s: String)            extends Event
+  case class Baz(c: Char)              extends Event
+  case class Qux(values: List[String]) extends Event
 
   implicit def encodeAdtNoDiscr[A, Repr <: Coproduct](
       implicit

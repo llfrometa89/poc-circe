@@ -9,4 +9,5 @@ object Main extends App {
   CustomEncodersAndDecoders.run()
   ADTsEncodingAndDecoding.run()
   ADTsEncodingAndDecodingShapeless.run()
+  Optics.run()
 }
